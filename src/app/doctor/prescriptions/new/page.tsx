@@ -78,8 +78,8 @@ export default function NewPrescriptionPage() {
       <AppShell navItems={navItems} title="Médico">
         <div className="max-w-2xl">
           <div className="flex items-center gap-3 mb-6">
-            <button onClick={() => router.back()} className="text-gray-400 hover:text-gray-600">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button onClick={() => router.back()} className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-gray-200 bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-800 transition-colors shadow-sm" title="Volver">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
@@ -96,7 +96,7 @@ export default function NewPrescriptionPage() {
                   value={patientId}
                   onChange={(e) => setPatientId(e.target.value)}
                   required
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm text-gray-900 bg-white focus:ring-2 focus:ring-blue-500 outline-none"
                 >
                   <option value="">— Seleccionar —</option>
                   {patients.map((p) => (
@@ -113,7 +113,7 @@ export default function NewPrescriptionPage() {
                   onChange={(e) => setNotes(e.target.value)}
                   rows={3}
                   placeholder="Indicaciones generales..."
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none resize-none"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm text-gray-900 bg-white focus:ring-2 focus:ring-blue-500 outline-none resize-none"
                 />
               </div>
             </div>
@@ -157,7 +157,7 @@ export default function NewPrescriptionPage() {
                           onChange={(e) => updateItem(i, 'name', e.target.value)}
                           required
                           placeholder="ej. Amoxicilina 500mg"
-                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 bg-white focus:ring-2 focus:ring-blue-500 outline-none"
                         />
                       </div>
                       <div>
@@ -166,7 +166,7 @@ export default function NewPrescriptionPage() {
                           value={item.dosage}
                           onChange={(e) => updateItem(i, 'dosage', e.target.value)}
                           placeholder="ej. 1 cada 8h"
-                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 bg-white focus:ring-2 focus:ring-blue-500 outline-none"
                         />
                       </div>
                       <div>
@@ -177,7 +177,7 @@ export default function NewPrescriptionPage() {
                           value={item.quantity}
                           onChange={(e) => updateItem(i, 'quantity', e.target.value)}
                           placeholder="ej. 21"
-                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 bg-white focus:ring-2 focus:ring-blue-500 outline-none"
                         />
                       </div>
                       <div className="sm:col-span-2">
@@ -186,7 +186,7 @@ export default function NewPrescriptionPage() {
                           value={item.instructions}
                           onChange={(e) => updateItem(i, 'instructions', e.target.value)}
                           placeholder="ej. Después de comer"
-                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 bg-white focus:ring-2 focus:ring-blue-500 outline-none"
                         />
                       </div>
                     </div>
