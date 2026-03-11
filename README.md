@@ -75,6 +75,8 @@ npm run test:cov # Tests con reporte de cobertura
 NEXT_PUBLIC_API_BASE_URL=http://localhost:3001/api
 ```
 
-## Despliegue en producción
+## URLs de producción
 
-> TODO: Documentar URLs de producción (Vercel / Netlify / otro).
+- **Frontend**: `https://nutrabiotics-front-j374uucwb.vercel.app`
+- **API (backend)**: `https://nutrabioticsback-production.up.railway.app/api`
+- **Swagger**: `https://nutrabioticsback-production.up.railway.app/docs`
