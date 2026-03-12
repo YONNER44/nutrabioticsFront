@@ -77,6 +77,6 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:3001/api
 
 ## URLs de producción
 
-- **Frontend**: `https://nutrabiotics-front-j374uucwb.vercel.app`
+- **Frontend**: `https://nutrabiotics-front.vercel.app`
 - **API (backend)**: `https://nutrabioticsback-production.up.railway.app/api`
 - **Swagger**: `https://nutrabioticsback-production.up.railway.app/docs`
