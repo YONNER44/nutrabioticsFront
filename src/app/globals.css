@@ -12,11 +12,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* App is light-mode only — disable dark mode overrides */
+
+/* Force date inputs to render in light mode on all devices/browsers */
+input[type="date"],
+input[type="datetime-local"] {
+  color-scheme: light;
+  color: #111827; /* gray-900 */
 }
 
 body {
