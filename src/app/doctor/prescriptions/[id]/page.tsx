@@ -64,7 +64,7 @@ export default function DoctorPrescriptionDetailPage() {
           {/* Header */}
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-center gap-3">
-              <button onClick={() => router.back()} className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-gray-200 bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-800 transition-colors shadow-sm" title="Volver">
+              <button onClick={() => router.back()} className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-gray-200 bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-800 transition-colors shadow-sm flex-shrink-0" title="Volver">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
@@ -74,19 +74,21 @@ export default function DoctorPrescriptionDetailPage() {
                 <p className="text-sm font-mono text-blue-700">{prescription.code}</p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <StatusBadge status={prescription.status} />
-              <button
-                onClick={downloadPdf}
-                disabled={isDownloading}
-                className="inline-flex items-center gap-2 text-sm border border-gray-300 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-1.5 rounded-lg transition-colors"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                {isDownloading ? 'Descargando...' : 'Descargar PDF'}
-              </button>
-            </div>
+            <StatusBadge status={prescription.status} />
+          </div>
+
+          {/* Actions */}
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
+            <button
+              onClick={downloadPdf}
+              disabled={isDownloading}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm border border-gray-300 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-4 py-2.5 rounded-lg transition-colors"
+            >
+              <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              {isDownloading ? 'Descargando...' : 'Descargar PDF'}
+            </button>
           </div>
 
           {/* Info cards */}

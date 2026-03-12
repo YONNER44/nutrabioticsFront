@@ -98,10 +98,10 @@ export default function AppShell({ children, navItems, title }: AppShellProps) {
 
             {/* Right: user + logout */}
             <div className="flex items-center gap-3">
-              {/* User info */}
-              <div className="hidden sm:flex items-center gap-2.5">
+              {/* User info — avatar always visible, name+badge only on sm+ */}
+              <div className="flex items-center gap-2.5">
                 <Avatar name={user?.name} />
-                <div className="text-right leading-tight">
+                <div className="hidden sm:block text-right leading-tight">
                   <p className="text-sm font-semibold text-gray-900 truncate max-w-[140px]">{user?.name}</p>
                   <span className={`inline-block text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${roleColors[role] ?? 'bg-gray-100 text-gray-600'}`}>
                     {roleLabels[role] ?? title}
@@ -147,16 +147,6 @@ export default function AppShell({ children, navItems, title }: AppShellProps) {
         {/* Mobile menu */}
         {mobileOpen && (
           <div className="md:hidden border-t border-gray-100 bg-white px-4 py-3 space-y-1">
-            {/* Mobile user */}
-            <div className="flex items-center gap-2 px-2 py-2 mb-2">
-              <Avatar name={user?.name} />
-              <div>
-                <p className="text-sm font-semibold text-gray-900">{user?.name}</p>
-                <span className={`inline-block text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${roleColors[role] ?? 'bg-gray-100 text-gray-600'}`}>
-                  {roleLabels[role] ?? title}
-                </span>
-              </div>
-            </div>
             {navItems.map((item) => {
               const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
               return (
