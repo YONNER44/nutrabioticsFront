@@ -88,35 +88,21 @@ function DoctorPrescriptionsContent() {
               </select>
               <div className="flex flex-col gap-1">
                 <label className="text-xs font-medium text-gray-500 px-1">Desde</label>
-                <div className="relative">
-                  <input
-                    type="date"
-                    value={from}
-                    onChange={(e) => updateFilter('from', e.target.value)}
-                    className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white w-full"
-                  />
-                  {!from && (
-                    <span className="absolute inset-0 flex items-center px-3 text-sm text-gray-400 pointer-events-none select-none">
-                      dd/mm/aaaa
-                    </span>
-                  )}
-                </div>
+                <input
+                  type="date"
+                  value={from}
+                  onChange={(e) => updateFilter('from', e.target.value)}
+                  className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
+                />
               </div>
               <div className="flex flex-col gap-1">
                 <label className="text-xs font-medium text-gray-500 px-1">Hasta</label>
-                <div className="relative">
-                  <input
-                    type="date"
-                    value={to}
-                    onChange={(e) => updateFilter('to', e.target.value)}
-                    className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white w-full"
-                  />
-                  {!to && (
-                    <span className="absolute inset-0 flex items-center px-3 text-sm text-gray-400 pointer-events-none select-none">
-                      dd/mm/aaaa
-                    </span>
-                  )}
-                </div>
+                <input
+                  type="date"
+                  value={to}
+                  onChange={(e) => updateFilter('to', e.target.value)}
+                  className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
+                />
               </div>
               {(status || from || to) && (
                 <button
