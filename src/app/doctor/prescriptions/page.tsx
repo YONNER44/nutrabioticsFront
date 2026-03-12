@@ -76,7 +76,7 @@ function DoctorPrescriptionsContent() {
 
           {/* Filters */}
           <div className="bg-white rounded-xl border border-gray-200 p-4">
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap items-end gap-3">
               <select
                 value={status}
                 onChange={(e) => updateFilter('status', e.target.value)}
@@ -86,20 +86,24 @@ function DoctorPrescriptionsContent() {
                 <option value="pending">Pendiente</option>
                 <option value="consumed">Consumida</option>
               </select>
-              <input
-                type="date"
-                value={from}
-                onChange={(e) => updateFilter('from', e.target.value)}
-                className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
-                placeholder="Desde"
-              />
-              <input
-                type="date"
-                value={to}
-                onChange={(e) => updateFilter('to', e.target.value)}
-                className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
-                placeholder="Hasta"
-              />
+              <div className="flex flex-col gap-1">
+                <label className="text-xs font-medium text-gray-500 px-1">Desde</label>
+                <input
+                  type="date"
+                  value={from}
+                  onChange={(e) => updateFilter('from', e.target.value)}
+                  className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                <label className="text-xs font-medium text-gray-500 px-1">Hasta</label>
+                <input
+                  type="date"
+                  value={to}
+                  onChange={(e) => updateFilter('to', e.target.value)}
+                  className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
+                />
+              </div>
               {(status || from || to) && (
                 <button
                   onClick={() => router.push('/doctor/prescriptions')}
