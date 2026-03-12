@@ -15,6 +15,7 @@ import { Metrics } from '@/lib/types';
 const navItems = [
   { href: '/admin', label: 'Dashboard' },
   { href: '/admin/prescriptions', label: 'Prescripciones' },
+  { href: '/admin/users', label: 'Usuarios' },
 ];
 
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444'];

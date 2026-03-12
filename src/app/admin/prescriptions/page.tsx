@@ -16,6 +16,7 @@ import DateInput from '@/components/DateInput';
 const navItems = [
   { href: '/admin', label: 'Dashboard' },
   { href: '/admin/prescriptions', label: 'Prescripciones' },
+  { href: '/admin/users', label: 'Usuarios' },
 ];
 
 function AdminPrescriptionsContent() {
