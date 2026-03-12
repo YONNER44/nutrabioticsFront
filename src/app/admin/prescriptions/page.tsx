@@ -11,6 +11,7 @@ import EmptyState from '@/components/EmptyState';
 import Pagination from '@/components/Pagination';
 import api from '@/lib/api';
 import { Prescription, PaginatedResponse } from '@/lib/types';
+import DateInput from '@/components/DateInput';
 
 const navItems = [
   { href: '/admin', label: 'Dashboard' },
@@ -80,20 +81,16 @@ function AdminPrescriptionsContent() {
               </select>
               <div className="flex flex-col gap-1">
                 <label className="text-xs font-medium text-gray-500 px-1">Desde</label>
-                <input
-                  type="date"
+                <DateInput
                   value={from}
-                  onChange={(e) => updateFilter('from', e.target.value)}
-                  className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
+                  onChange={(v) => updateFilter('from', v)}
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <label className="text-xs font-medium text-gray-500 px-1">Hasta</label>
-                <input
-                  type="date"
+                <DateInput
                   value={to}
-                  onChange={(e) => updateFilter('to', e.target.value)}
-                  className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
+                  onChange={(v) => updateFilter('to', v)}
                 />
               </div>
               {(status || from || to) && (

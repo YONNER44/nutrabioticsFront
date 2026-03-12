@@ -8,6 +8,7 @@ import {
 } from 'recharts';
 import AppShell from '@/components/AppShell';
 import RouteGuard from '@/components/RouteGuard';
+import DateInput from '@/components/DateInput';
 import api from '@/lib/api';
 import { Metrics } from '@/lib/types';
 
@@ -61,19 +62,9 @@ export default function AdminDashboardPage() {
             <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
             {/* Date filters */}
             <div className="flex flex-wrap gap-2 items-center">
-              <input
-                type="date"
-                value={from}
-                onChange={(e) => setFrom(e.target.value)}
-                className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
-              />
+              <DateInput value={from} onChange={setFrom} />
               <span className="text-sm text-gray-400">—</span>
-              <input
-                type="date"
-                value={to}
-                onChange={(e) => setTo(e.target.value)}
-                className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
-              />
+              <DateInput value={to} onChange={setTo} />
               {(from || to) && (
                 <button
                   onClick={() => { setFrom(''); setTo(''); }}
