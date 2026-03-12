@@ -61,19 +61,33 @@ export default function AdminDashboardPage() {
             <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
             {/* Date filters */}
             <div className="flex flex-wrap gap-2 items-center">
-              <input
-                type="date"
-                value={from}
-                onChange={(e) => setFrom(e.target.value)}
-                className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
-              />
+              <div className="relative">
+                <input
+                  type="date"
+                  value={from}
+                  onChange={(e) => setFrom(e.target.value)}
+                  className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
+                />
+                {!from && (
+                  <span className="absolute inset-0 flex items-center px-3 text-sm text-gray-400 pointer-events-none select-none">
+                    dd/mm/aaaa
+                  </span>
+                )}
+              </div>
               <span className="text-sm text-gray-400">—</span>
-              <input
-                type="date"
-                value={to}
-                onChange={(e) => setTo(e.target.value)}
-                className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
-              />
+              <div className="relative">
+                <input
+                  type="date"
+                  value={to}
+                  onChange={(e) => setTo(e.target.value)}
+                  className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 bg-white"
+                />
+                {!to && (
+                  <span className="absolute inset-0 flex items-center px-3 text-sm text-gray-400 pointer-events-none select-none">
+                    dd/mm/aaaa
+                  </span>
+                )}
+              </div>
               {(from || to) && (
                 <button
                   onClick={() => { setFrom(''); setTo(''); }}
